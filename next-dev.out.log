@@ -1,0 +1,58 @@
+
+> tattv-peeth-gurukul@1.0.0 dev
+> next dev -p 3000
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.56.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 7.6s
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 27.8s (791 modules)
+ GET /gallery 200 in 28720ms
+ GET /gallery 200 in 181ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 1562ms (828 modules)
+ GET /admin 200 in 2201ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.9s (1628 modules)
+ GET / 200 in 3468ms
+ ✓ Compiled /about in 455ms (1633 modules)
+ GET /about 200 in 616ms
+ GET / 200 in 173ms
+ ○ Compiling /blog ...
+ ✓ Compiled /blog in 517ms (1639 modules)
+ GET /blog 200 in 692ms
+ GET / 200 in 86ms
+ GET /about 200 in 48ms
+ GET / 200 in 73ms
+ ○ Compiling /donate ...
+ ✓ Compiled /donate in 1182ms (1651 modules)
+ GET /donate 200 in 1470ms
+ GET / 200 in 100ms
+ ✓ Compiled in 1011ms (1665 modules)
+ GET / 200 in 262ms
+ GET /donate 200 in 59ms
+ ○ Compiling /api/donate ...
+ ✓ Compiled /api/donate in 1130ms (1678 modules)
+ POST /api/donate 200 in 1406ms
+ GET /admin 200 in 521ms
+ GET / 200 in 129ms
+ ✓ Compiled in 2s (1663 modules)
+ GET / 200 in 509ms
+ ✓ Compiled in 936ms (1663 modules)
+ GET / 200 in 347ms
+ GET / 200 in 623ms
+ GET /about 200 in 53ms
+ ○ Compiling /vision-mission ...
+ ✓ Compiled /vision-mission in 781ms (1654 modules)
+ GET /vision-mission 200 in 931ms
+ GET / 200 in 91ms
+ GET / 200 in 85ms
+ GET /vision-mission 200 in 65ms
+ GET /about 200 in 59ms
+ GET / 200 in 86ms
+ GET /about 200 in 41ms
+ GET / 200 in 80ms
+ GET / 200 in 78ms
