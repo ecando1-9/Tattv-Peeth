@@ -1,0 +1,189 @@
+https://res.cloudinary.com/dur6fkyoz/image/upload/v1780909969/WhatsApp_Image_2026-06-06_at_8.01.16_PM_xaenxn.jpg
+Build a complete production-ready website for "Tattv Peeth Gurukul Foundation" using:
+
+* Next.js 15 (App Router)
+* TypeScript
+* Tailwind CSS
+* Shadcn UI
+* Framer Motion
+* Supabase
+* Vercel deployment ready
+
+Use the organization logo:
+https://res.cloudinary.com/dur6fkyoz/image/upload/v1780909969/WhatsApp_Image_2026-06-06_at_8.01.16_PM_xaenxn.jpg
+
+Project Requirements:
+
+Create a premium NGO/Foundation website inspired by modern spiritual and educational institutions.
+
+Design Style:
+
+* Professional
+* Elegant
+* Spiritual
+* Modern
+* Mobile-first
+* Fully responsive
+* Fast loading
+* SEO optimized
+
+Color Palette:
+
+* Saffron
+* Deep maroon
+* Gold accents
+* White backgrounds
+* Warm spiritual theme
+
+Pages:
+
+1. Home
+2. About Us
+3. Vision & Mission
+4. Development Timeline
+5. Gallery
+6. Contact
+7. Donate
+8. Blog
+
+Home Page Sections:
+
+Hero Section:
+
+* Large background image
+* Organization logo
+* Main heading:
+  "Tattv Peeth Gurukul"
+* Subheading:
+  "A Gurukul For A New Generation"
+* CTA buttons:
+
+  * Support The Initiative
+  * Learn More
+
+Impact Counter Section:
+
+* Amount Raised
+* Target Amount
+* Total Supporters
+* Progress Percentage
+
+Make all values dynamic from Supabase.
+
+About Section:
+
+* Foundation introduction
+* Mission statement
+* Vision statement
+
+Four Pillars Section:
+
+* Shastra
+* Sadhana
+* Seva
+* Samskara
+
+Development Timeline:
+
+* Phase 1: Land Preparation
+* Phase 2: Infrastructure Development
+* Phase 3: Agriculture & Sustainability
+* Phase 4: Academic Launch
+* Phase 5: Community Expansion
+
+Gallery:
+
+* Dynamic gallery from Supabase Storage
+* Lightbox support
+* Categories
+
+Testimonials:
+
+* Dynamic testimonials
+* Admin manageable
+
+Blog:
+
+* Dynamic blog system
+* Rich content support
+* Categories
+* Featured posts
+
+Donate Page:
+
+* Donation progress display
+* Donation amounts
+* Donation statistics
+
+IMPORTANT:
+Do NOT integrate payment gateway yet.
+
+Instead create:
+
+* "Donate Now" button
+* Placeholder API structure
+* Future Razorpay integration hooks
+
+Authentication:
+
+Supabase Auth
+
+Roles:
+
+* Admin
+* Content Manager
+* Donor
+
+Admin Dashboard:
+
+Admin can:
+
+* Update donation statistics
+* Add blog posts
+* Upload gallery images
+* Edit testimonials
+* Edit development timeline
+* Edit contact details
+
+Database Tables:
+
+profiles
+donations
+gallery
+testimonials
+blog_posts
+timeline_phases
+site_settings
+
+Features:
+
+* Dark mode support
+* SEO metadata
+* OpenGraph tags
+* Sitemap generation
+* Contact form
+* WhatsApp floating button
+* Scroll animations
+* Responsive navbar
+* Sticky header
+* Mobile menu
+* Footer with social links
+
+Deployment:
+
+* Supabase setup instructions
+* Environment variables
+* Vercel deployment instructions
+
+Generate:
+
+1. Full folder structure
+2. Database schema
+3. Supabase SQL
+4. All React components
+5. All pages
+6. Tailwind styling
+7. API routes
+8. Deployment guide
+
+Build the project as a complete production-ready application.

@@ -18,7 +18,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b bg-background/88 backdrop-blur-xl">
       <div className="container flex h-[72px] items-center justify-between py-3">
         <Link href="/" className="-ml-2 flex items-center gap-3 md:-ml-4" onClick={() => setOpen(false)}>
-          <Image src={LOGO_URL} alt="Tattv Peeth logo" width={62} height={62} className="h-[58px] w-[58px] rounded-md border object-cover md:h-[62px] md:w-[62px]" priority />
+          <Image src={LOGO_URL} alt="Tattv Peeth logo" width={62} height={62} className="h-[58px] w-[58px] rounded-md object-contain md:h-[62px] md:w-[62px]" priority />
           <div className="leading-tight">
             <div className="font-serif text-xl font-semibold">Tattv Peeth</div>
             <div className="text-xs uppercase tracking-[0.18em] text-saffron">Gurukul</div>
