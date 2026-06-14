@@ -43,6 +43,7 @@ export type TimelinePhase = {
   status: "active" | "upcoming" | "planned";
   description: string;
   items: string[];
+  image_url?: string;
 };
 
 export type SiteSetting = {

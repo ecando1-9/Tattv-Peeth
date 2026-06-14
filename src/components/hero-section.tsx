@@ -1,39 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, HeartHandshake } from "lucide-react";
 import { LOGO_URL, TAGLINE } from "@/lib/constants";
-import { Button } from "./ui/button";
-import { MotionReveal } from "./motion-reveal";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-72px)] overflow-hidden">
+      {/* Background */}
       <Image
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85"
-        alt="Sunlit green campus landscape"
+        src="/hero_banner.jpg"
+        alt="Sacred river Ganga at sunrise near Garh Mukteshwar campus"
         fill
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#2c1f0a]/86 via-[#5b161a]/64 to-[#d97706]/20" />
+      {/* Overlay — darker for perfect text contrast with soft backdrop blur */}
+      <div className="absolute inset-0 bg-[#2C1F0A]/75 backdrop-blur-[1.5px]" />
+
       <div className="container relative flex min-h-[calc(100vh-72px)] items-center py-16">
-        <MotionReveal className="max-w-3xl text-white">
-          <Image src={LOGO_URL} alt="Tattv Peeth Gurukul logo" width={96} height={96} className="mb-8 rounded-lg border border-white/25 object-cover shadow-soft" />
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-gold">{TAGLINE}</p>
-          <h1 className="font-serif text-5xl font-semibold leading-[1.02] md:text-7xl">Tattv Peeth Gurukul</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">
-            A residential Gurukul where ancient Indian Knowledge Systems, contemporary academics, yoga, organic
-            farming, and community service converge in one living institution.
+        <div className="max-w-3xl text-white">
+          {/* Logo */}
+          <Image
+            src={LOGO_URL}
+            alt="Tattv Peeth Gurukul logo"
+            width={80}
+            height={80}
+            className="mb-8 object-contain"
+            style={{ filter: "drop-shadow(0 2px 12px rgba(0,0,0,0.35))" }}
+          />
+
+          {/* Eyebrow */}
+          <p
+            className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em]"
+            style={{ color: "#C7A85A" }}
+          >
+            {TAGLINE}
           </p>
+
+          {/* Headline */}
+          <h1 className="font-serif text-5xl font-semibold leading-[1.05] md:text-7xl">
+            Tattv Peeth{" "}
+            <em className="italic" style={{ color: "#C7A85A" }}>
+              Gurukul
+            </em>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-base font-light leading-[1.9] text-white/80">
+            A residential Gurukul where ancient Indian Knowledge Systems,
+            contemporary academics, yoga, organic farming, and community service
+            converge in one living institution.
+          </p>
+
+          {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="bg-gold text-[#2c1f0a] hover:bg-saffron">
-              <Link href="/donate"><HeartHandshake className="h-4 w-4" /> Support The Initiative</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/35 text-white hover:bg-white hover:text-[#2c1f0a]">
-              <Link href="/about">Learn More <ArrowRight className="h-4 w-4" /></Link>
-            </Button>
+            <Link
+              href="/donate"
+              className="inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-xs font-medium uppercase tracking-[0.08em] transition-colors"
+              style={{ background: "#C7A85A", color: "#2C1F0A" }}
+            >
+              Support the Initiative
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border px-6 py-3 text-xs font-medium uppercase tracking-[0.08em] text-white/90 transition-colors hover:bg-white/10"
+              style={{ borderColor: "rgba(255,255,255,0.3)" }}
+            >
+              Learn More
+            </Link>
           </div>
-        </MotionReveal>
+        </div>
       </div>
     </section>
   );

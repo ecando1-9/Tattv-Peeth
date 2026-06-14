@@ -8,6 +8,7 @@ export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/vision-mission", label: "Vision & Mission" },
+  { href: "/contribute", label: "Campaigns" },
   { href: "/timeline", label: "Timeline" },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },

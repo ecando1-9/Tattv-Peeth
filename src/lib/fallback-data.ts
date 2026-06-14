@@ -12,21 +12,25 @@ export const pillars = [
     title: "Shastra",
     label: "Scriptural Wisdom",
     description: "Vedas, Upanishads, Sanskrit, Indian philosophy, mathematics, science, and technology in one rigorous learning arc.",
+    image: "/shastra.png",
   },
   {
     title: "Sadhana",
     label: "Inner Discipline",
     description: "Daily yoga, pranayama, meditation, havan, and contemplative practice for emotional balance and spiritual clarity.",
+    image: "/sadhana.png",
   },
   {
     title: "Seva",
     label: "Service",
     description: "Community service, rural development, environmental restoration, and a lived relationship with the land.",
+    image: "/seva.png",
   },
   {
     title: "Samskara",
     label: "Character",
     description: "Ethics, conduct, respect, self-reliance, and cultural rootedness woven into daily residential life.",
+    image: "/samskara.png",
   },
 ];
 
@@ -40,6 +44,7 @@ export const timelinePhases: TimelinePhase[] = [
     status: "active",
     description: "Boundary demarcation, land levelling, soil preparation, water access, and the first campus pathways prepare the ground for a living Gurukul.",
     items: ["Legal consolidation", "Boundary wall", "Land levelling", "Water access", "Entry gate"],
+    image_url: "/phase1.png",
   },
   {
     id: "phase-2",
@@ -50,6 +55,7 @@ export const timelinePhases: TimelinePhase[] = [
     status: "active",
     description: "Core construction begins with teaching spaces, residential quarters, dining facilities, and a yoga and meditation hall.",
     items: ["Classrooms", "Dormitories", "Kitchen", "Meditation hall", "Faculty housing"],
+    image_url: "/phase2.png",
   },
   {
     id: "phase-3",
@@ -60,6 +66,7 @@ export const timelinePhases: TimelinePhase[] = [
     status: "upcoming",
     description: "Organic orchards, agroforestry, medicinal gardens, composting, and rainwater harvesting make the campus self-sustaining.",
     items: ["Organic farming", "Agroforestry", "Herbal garden", "Composting", "Rainwater harvesting"],
+    image_url: "/phase3.png",
   },
   {
     id: "phase-4",
@@ -70,6 +77,7 @@ export const timelinePhases: TimelinePhase[] = [
     status: "planned",
     description: "The first students enter a curriculum aligned with NEP 2020, Indian Knowledge Systems, and contemporary academics.",
     items: ["Admissions", "Faculty appointments", "Curriculum finalisation", "CBSE process", "Parent engagement"],
+    image_url: "/phase4.png",
   },
   {
     id: "phase-5",
@@ -80,6 +88,7 @@ export const timelinePhases: TimelinePhase[] = [
     status: "planned",
     description: "Open programs, research partnerships, rural skills training, and community wellness initiatives extend the Gurukul's reach.",
     items: ["Open programs", "Research", "Rural skills", "Annual gathering", "Alumni network"],
+    image_url: "/phase5.png",
   },
 ];
 

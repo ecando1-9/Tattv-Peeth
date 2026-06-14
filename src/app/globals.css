@@ -70,3 +70,106 @@ body {
   background-image: linear-gradient(90deg, transparent, rgba(201, 160, 90, 0.65), transparent);
   height: 1px;
 }
+
+/* ===== CONTRIBUTE PAGE ===== */
+:root {
+  --c-cream: #F7F3EC;
+  --c-warm: #F2EDE3;
+  --c-ochre: #8B6914;
+  --c-deep: #2C1F0A;
+  --c-mid: #5A4020;
+  --c-muted: #7A6545;
+  --c-div: rgba(90, 64, 32, 0.15);
+  --c-secured: #C7A85A;
+  --c-gf: #EAF3DE;
+  --c-gt: #27500A;
+  --c-gb: #3B6D11;
+  --c-af: #FAEEDA;
+  --c-at: #633806;
+  --c-ab: #854F0B;
+  --c-pf: #EEEDFE;
+  --c-pt: #3C3489;
+  --c-pb: #534AB7;
+}
+.dark {
+  --c-cream: #1E1610;
+  --c-warm: #1A1209;
+  --c-deep: #EDE0C4;
+  --c-mid: #C4A97D;
+  --c-muted: #9A8260;
+  --c-div: rgba(200, 170, 100, 0.12);
+  --c-secured: #B8943E;
+  --c-ochre: #C9A05A;
+}
+
+/* Devanagari font utility */
+.font-dev {
+  font-family: var(--font-devanagari, 'Noto Serif Devanagari', serif);
+}
+
+/* Bhumi Patala cells */
+.bhumi-cell-founder { background: var(--c-secured); }
+.bhumi-cell-t2 { background: transparent; border: 1.5px solid var(--c-ochre); }
+.bhumi-cell-t3 { background: transparent; border: 1.5px dashed rgba(139, 105, 20, 0.55); }
+.bhumi-cell-tbd {
+  background: repeating-linear-gradient(45deg, rgba(90,64,32,0.10) 0 4px, transparent 4px 8px);
+  border: 1px solid rgba(90, 64, 32, 0.25);
+}
+
+/* Deepa lamp flame */
+@keyframes c-flick {
+  from { transform: translateX(-50%) scale(1) rotate(-2deg); opacity: 0.95; }
+  to   { transform: translateX(-50%) scale(1.12) rotate(2deg); opacity: 1; }
+}
+.deepa-flame {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 16px;
+  background: radial-gradient(ellipse at 50% 80%, #FFE9A8 0%, #F4B33C 55%, rgba(244,179,60,0) 75%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: c-flick 1.6s ease-in-out infinite alternate;
+}
+
+/* Campaign progress bars */
+.c-bar-track {
+  background: rgba(90, 64, 32, 0.1);
+  border-radius: 2px;
+  height: 5px;
+  display: flex;
+  overflow: hidden;
+}
+.c-bar-secured { height: 5px; background: var(--c-secured); }
+.c-bar-raised  { height: 5px; background: var(--c-ochre); }
+
+/* Shilā-Lekha band */
+.shila-band {
+  background: linear-gradient(135deg, #3A2E1B 0%, #4A3B22 50%, #3A2E1B 100%);
+  color: #EFE6D2;
+  border-radius: 14px;
+  padding: 2.6rem 2.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.shila-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,0.018) 3px 4px);
+  pointer-events: none;
+}
+
+/* Ring SVG transitions */
+.ring-circle-progress {
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+/* PC Wide screen adjustments: expand container and scale up text slightly */
+@media (min-width: 1024px) {
+  .max-w-\[920px\] {
+    max-width: 1140px !important;
+  }
+}
+

@@ -1,45 +1,144 @@
 "use client";
 
 import { useState } from "react";
-import { HeartHandshake } from "lucide-react";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Input } from "./ui/input";
+
+const AMOUNTS = [501, 1001, 2501, 5001, 11000, 21000, 51000];
 
 export function DonateForm() {
-  const [status, setStatus] = useState<string | null>(null);
+  const [amount, setAmount]   = useState<number | null>(null);
+  const [custom, setCustom]   = useState("");
+  const [name, setName]       = useState("");
+  const [email, setEmail]     = useState("");
+  const [phone, setPhone]     = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus]   = useState<string | null>(null);
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("Recording donation intent...");
-    const formData = new FormData(event.currentTarget);
+  const finalAmt = amount ?? (custom ? parseInt(custom) : null);
+
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("Sending…");
     const response = await fetch("/api/donate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(formData)),
+      body: JSON.stringify({ name, email, phone, amount: finalAmt, message }),
     });
     const result = await response.json();
-    setStatus(result.message || "Donation intent saved. Payment integration will be enabled later.");
+    setStatus(result.message ?? "Thank you. Our team will contact you with payment details.");
   }
 
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "10px 12px",
+    border: "0.5px solid var(--c-div)",
+    background: "var(--c-warm)",
+    borderRadius: "2px",
+    fontFamily: "inherit",
+    fontSize: "14px",
+    color: "var(--c-deep)",
+    outline: "none",
+  };
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Donate Now</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form className="grid gap-4" onSubmit={submit}>
-          <Input name="name" placeholder="Full name" required />
-          <Input name="email" type="email" placeholder="Email address" required />
-          <Input name="phone" placeholder="Phone number" />
-          <Input name="amount" type="number" min="1" placeholder="Donation amount in INR" required />
-          <Button type="submit" size="lg"><HeartHandshake className="h-4 w-4" /> Donate Now</Button>
-          <p className="text-xs leading-6 text-muted-foreground">
-            Our team will contact you with contribution details and receipt information.
+    <div
+      className="rounded-sm border p-7"
+      style={{ background: "var(--c-warm)", borderColor: "var(--c-div)" }}
+    >
+      <p
+        className="mb-1 text-[11px] font-medium uppercase tracking-[0.14em]"
+        style={{ color: "var(--c-ochre)" }}
+      >
+        Make your offering
+      </p>
+      <h3
+        className="mb-6 font-serif text-2xl font-medium"
+        style={{ color: "var(--c-deep)" }}
+      >
+        Every rupee is traced &amp; receipted
+      </h3>
+
+      <form className="grid gap-5" onSubmit={submit}>
+        {/* Amount chips */}
+        <div>
+          <p
+            className="mb-2 text-[10px] font-medium uppercase tracking-[0.1em]"
+            style={{ color: "var(--c-muted)" }}
+          >
+            Select amount
           </p>
-          {status && <p className="text-sm font-medium text-saffron">{status}</p>}
-        </form>
-      </CardContent>
-    </Card>
+          <div className="mb-3 flex flex-wrap gap-2">
+            {AMOUNTS.map((v) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => { setAmount(v); setCustom(""); }}
+                className="rounded-sm border font-serif text-[14px] font-medium px-4 py-[7px] transition-all"
+                style={{
+                  background:  amount === v ? "var(--c-ochre)" : "var(--c-cream)",
+                  color:       amount === v ? "var(--c-cream)" : "var(--c-mid)",
+                  borderColor: amount === v ? "var(--c-ochre)" : "var(--c-div)",
+                  cursor: "pointer",
+                }}
+              >
+                ₹{v.toLocaleString("en-IN")}
+              </button>
+            ))}
+          </div>
+          <input
+            type="number"
+            placeholder="Or enter a custom amount (₹)"
+            value={custom}
+            onChange={(e) => { setCustom(e.target.value); setAmount(null); }}
+            style={inputStyle}
+          />
+        </div>
+
+        {/* Personal details */}
+        <input
+          type="text"
+          placeholder="Full name *"
+          value={name}
+          required
+          onChange={(e) => setName(e.target.value)}
+          style={inputStyle}
+        />
+        <input
+          type="email"
+          placeholder="Email address *"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+          style={inputStyle}
+        />
+        <input
+          type="tel"
+          placeholder="Phone number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          style={inputStyle}
+        />
+        <textarea
+          placeholder="Message or saṅkalpa (optional)"
+          value={message}
+          rows={3}
+          onChange={(e) => setMessage(e.target.value)}
+          style={{ ...inputStyle, resize: "vertical" }}
+        />
+
+        <button
+          type="submit"
+          className="rounded-sm py-3 text-[12px] font-medium uppercase tracking-[0.08em] bg-[var(--c-deep)] text-[var(--c-cream)] hover:bg-[var(--c-ochre)] transition-colors"
+        >
+          Confirm my offering
+          {finalAmt ? ` — ₹${finalAmt.toLocaleString("en-IN")}` : ""}
+        </button>
+
+        {status && (
+          <p className="text-[13px] font-light" style={{ color: "var(--c-muted)" }}>
+            {status}
+          </p>
+        )}
+      </form>
+    </div>
   );
 }

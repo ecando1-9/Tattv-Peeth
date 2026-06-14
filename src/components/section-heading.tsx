@@ -10,10 +10,27 @@ export function SectionHeading({
   centered?: boolean;
 }) {
   return (
-    <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="eyebrow">{eyebrow}</p>
-      <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">{title}</h2>
-      {description && <p className="mt-5 text-base leading-8 text-muted-foreground md:text-lg">{description}</p>}
+    <div className={centered ? "mx-auto max-w-[680px] text-center" : "max-w-[680px]"}>
+      <p
+        className="mb-3 text-[11px] font-medium uppercase tracking-[0.14em]"
+        style={{ color: "var(--c-ochre)" }}
+      >
+        {eyebrow}
+      </p>
+      <h2
+        className="font-serif text-[34px] font-medium leading-[1.2]"
+        style={{ color: "var(--c-deep)" }}
+      >
+        {title}
+      </h2>
+      {description && (
+        <p
+          className="mt-4 text-[14px] font-light leading-[1.85]"
+          style={{ color: "var(--c-muted)" }}
+        >
+          {description}
+        </p>
+      )}
     </div>
   );
 }
