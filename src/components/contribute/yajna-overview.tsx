@@ -123,7 +123,15 @@ export function YajnaOverview() {
             ].map((y, i) => (
               <div
                 key={y.name}
-                className="flex flex-col border-b border-r last:border-b-0 md:border-b-0 md:last:border-r-0 overflow-hidden"
+                className={`flex flex-col overflow-hidden ${
+                  i === 4 ? "col-span-2" : "col-span-1"
+                } ${
+                  i % 2 === 0 && i !== 4 ? "border-r" : "border-r-0"
+                } ${
+                  i < 4 ? "border-b" : "border-b-0"
+                } md:col-span-1 ${
+                  i !== 4 ? "md:border-r" : "md:border-r-0"
+                } md:border-b-0`}
                 style={{
                   borderColor: "var(--c-div)",
                 }}
