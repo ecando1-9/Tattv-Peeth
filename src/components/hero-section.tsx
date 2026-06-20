@@ -19,24 +19,14 @@ export function HeroSection() {
       <div className="container relative flex min-h-[calc(100vh-72px)] items-center py-16">
         <div className="max-w-3xl text-white">
           {/* Logo */}
-          <svg width="80" height="80" viewBox="0 0 120 120" aria-hidden="true" className="mb-8 h-20 w-20 shrink-0" style={{ filter: "drop-shadow(0 2px 12px rgba(0,0,0,0.35))" }}>
-            <circle cx="60" cy="60" r="56" fill="#F7F2E7" stroke="#5E1F1B" strokeWidth="3"/>
-            <path d="M34,84 q9,-5 18,0 t18,0 t18,0" fill="none" stroke="#33576B" strokeWidth="2.4" strokeLinecap="round"/>
-            <path d="M34,92 q9,-5 18,0 t18,0 t18,0" fill="none" stroke="#33576B" strokeWidth="2.4" strokeLinecap="round"/>
-            <g transform="translate(60,80)">
-              <path d="M0,0 C -7,-11 -6,-19 0,-26 C 6,-19 7,-11 0,0 Z" fill="#B07A1E" stroke="#5E1F1B" strokeWidth="0.8" transform="rotate(-32)"/>
-              <path d="M0,0 C -7,-11 -6,-19 0,-26 C 6,-19 7,-11 0,0 Z" fill="#B07A1E" stroke="#5E1F1B" strokeWidth="0.8" transform="rotate(0)"/>
-              <path d="M0,0 C -7,-11 -6,-19 0,-26 C 6,-19 7,-11 0,0 Z" fill="#B07A1E" stroke="#5E1F1B" strokeWidth="0.8" transform="rotate(32)"/>
-            </g>
-            <rect x="57.5" y="52" width="5" height="28" fill="#6B3F18"/>
-            <g transform="translate(60,54)">
-              <path d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" strokeWidth="0.6" transform="rotate(-50)"/>
-              <path d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" strokeWidth="0.6" transform="rotate(-25)"/>
-              <path d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" strokeWidth="0.6" transform="rotate(0)"/>
-              <path d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" strokeWidth="0.6" transform="rotate(25)"/>
-              <path d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" strokeWidth="0.6" transform="rotate(50)"/>
-            </g>
-          </svg>
+          <Image
+            src={LOGO_URL}
+            alt="Tattv Peeth Emblem"
+            width={80}
+            height={80}
+            className="mb-8 h-20 w-20 rounded-full object-cover shrink-0"
+            style={{ filter: "drop-shadow(0 2px 12px rgba(0,0,0,0.35))" }}
+          />
 
           {/* Eyebrow */}
           <p
