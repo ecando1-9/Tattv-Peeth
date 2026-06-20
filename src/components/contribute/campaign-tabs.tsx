@@ -430,7 +430,7 @@ function ProjectCard({ p, onDonate }: { p: Project; onDonate: (title: string, ya
 /* ─── Donation Modal ────────────────────────────────────── */
 const PRESETS = [501, 1001, 2501, 5001, 11000, 21000, 51000, 101000];
 
-function DonateModal({
+export function DonateModal({
   project,
   yajna,
   onClose,

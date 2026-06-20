@@ -3,6 +3,7 @@ import { ContributeHero } from "@/components/contribute/contribute-hero";
 import { YajnaOverview } from "@/components/contribute/yajna-overview";
 import { CampaignOverall } from "@/components/contribute/campaign-overall";
 import { CampaignTabs } from "@/components/contribute/campaign-tabs";
+import { AkhandaDeepa } from "@/components/contribute/akhanda-deepa";
 import { LedgerSection } from "@/components/contribute/ledger-section";
 import { ContributeHow } from "@/components/contribute/contribute-how";
 import { ContributeFaq } from "@/components/contribute/contribute-faq";
@@ -19,6 +20,7 @@ export default function ContributePage() {
       <YajnaOverview />
       <CampaignOverall />
       <CampaignTabs />
+      <AkhandaDeepa />
       <LedgerSection />
       <ContributeHow />
       <ContributeFaq />
