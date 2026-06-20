@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export function OfferingsSection() {
@@ -62,15 +61,47 @@ export function OfferingsSection() {
                 borderColor: "var(--c-div)",
               }}
             >
-              {/* Cover Image */}
-              <div className="relative h-24 w-full overflow-hidden border-b" style={{ borderColor: "var(--c-div)" }}>
-                <Image
-                  src={y.image}
-                  alt={y.name}
-                  fill
-                  sizes="(max-width: 640px) 50vw, 20vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+              {/* Cover SVG instead of Image */}
+              <div className="h-24 w-full flex items-center justify-center border-b p-3 bg-[#F7F2E7]" style={{ borderColor: "var(--c-div)" }}>
+                {y.name === "Brahma" && (
+                  <svg viewBox="0 0 56 56" aria-hidden="true" className="h-12 w-12 text-primary">
+                    <rect x="14" y="12" width="28" height="20" rx="2" fill="#F7F2E7" stroke="#5E1F1B" strokeWidth="1.6"/>
+                    <line x1="20" y1="20" x2="36" y2="20" stroke="#9C5A2C" strokeWidth="1.6"/>
+                    <line x1="20" y1="26" x2="32" y2="26" stroke="#9C5A2C" strokeWidth="1.6"/>
+                    <path d="M28,12 v20" stroke="#5E1F1B" strokeWidth="0.8" opacity="0.5"/>
+                    <line x1="16" y1="40" x2="40" y2="40" stroke="#9C5A2C" strokeWidth="2.4" strokeLinecap="round"/>
+                  </svg>
+                )}
+                {y.name === "Deva" && (
+                  <svg viewBox="0 0 56 56" aria-hidden="true" className="h-12 w-12">
+                    <path d="M16,42 L40,42 L36,30 L20,30 Z" fill="#9C5A2C"/>
+                    <path d="M28,30 q-7,-12 0,-20 q7,8 0,20" fill="#F4D27A" stroke="#C9A24B" strokeWidth="1.2"/>
+                    <path d="M28,24 q-3,-6 0,-10 q3,4 0,10" fill="#E07B2C"/>
+                  </svg>
+                )}
+                {y.name === "Pitṛ" && (
+                  <svg viewBox="0 0 56 56" aria-hidden="true" className="h-12 w-12">
+                    <circle cx="28" cy="22" r="11" fill="none" stroke="#5E1F1B" strokeWidth="2"/>
+                    <path d="M28,33 v12 M20,45 h16" stroke="#5E1F1B" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                    <circle cx="28" cy="22" r="3" fill="#C9A24B"/>
+                  </svg>
+                )}
+                {y.name === "Bhūta" && (
+                  <svg viewBox="0 0 56 56" aria-hidden="true" className="h-12 w-12">
+                    <g fill="none" stroke="#33576B" strokeWidth="2.6" strokeLinecap="round">
+                      <path d="M12,26 q8,-6 16,0 t16,0"/>
+                      <path d="M12,34 q8,-6 16,0 t16,0"/>
+                      <path d="M12,42 q8,-6 16,0 t16,0"/>
+                    </g>
+                  </svg>
+                )}
+                {y.name === "Manuṣya" && (
+                  <svg viewBox="0 0 56 56" aria-hidden="true" className="h-12 w-12">
+                    <path d="M14,40 q14,-10 28,0" fill="none" stroke="#9C5A2C" strokeWidth="2.4" strokeLinecap="round"/>
+                    <circle cx="28" cy="22" r="6" fill="#F4D27A" stroke="#C9A24B" strokeWidth="1"/>
+                    <path d="M22,30 q6,5 12,0" fill="#B07A1E"/>
+                  </svg>
+                )}
               </div>
 
               <div className="px-4 py-5 text-center flex-1 flex flex-col justify-center">

@@ -9,27 +9,31 @@ export const donationStats: DonationStats = {
 
 export const pillars = [
   {
-    title: "Shastra",
+    dev: "शास्त्र",
+    title: "Śāstra",
     label: "Scriptural Wisdom",
-    description: "Vedas, Upanishads, Sanskrit, Indian philosophy, mathematics, science, and technology in one rigorous learning arc.",
+    description: "Veda and Upaniṣad, Saṃskṛta as a living tongue, darśana, Itihāsa-Purāṇa — alongside mathematics, science, and technology, the Bhāratīya contribution to each restored to its place.",
     image: "/shastra.png",
   },
   {
-    title: "Sadhana",
+    dev: "साधना",
+    title: "Sādhanā",
     label: "Inner Discipline",
-    description: "Daily yoga, pranayama, meditation, havan, and contemplative practice for emotional balance and spiritual clarity.",
+    description: "Daily sandhyā, yoga, prāṇāyāma, havan, and meditation — the keel of the day, kept by the ācāryas before it is ever asked of the vidyārthīs.",
     image: "/sadhana.png",
   },
   {
-    title: "Seva",
+    dev: "सेवा",
+    title: "Sevā",
     label: "Service",
-    description: "Community service, rural development, environmental restoration, and a lived relationship with the land.",
+    description: "Go-sevā, work in the field, care of guests, service to the surrounding villages, and Gaṅgā-sevā at the Kārtika melā — niṣkāma karma, a lived relationship with the land.",
     image: "/seva.png",
   },
   {
-    title: "Samskara",
+    dev: "संस्कार",
+    title: "Saṃskāra",
     label: "Character",
-    description: "Ethics, conduct, respect, self-reliance, and cultural rootedness woven into daily residential life.",
+    description: "Conduct, respect, self-reliance, and cultural rootedness - formed not by lecture but woven into the daily rhythm of residential gurukula life.",
     image: "/samskara.png",
   },
 ];
@@ -92,12 +96,7 @@ export const timelinePhases: TimelinePhase[] = [
   },
 ];
 
-export const galleryImages: GalleryImage[] = [
-  { id: "logo", title: "Tattv Peeth Emblem", category: "Foundation", image_url: LOGO_URL, alt: "Tattv Peeth Gurukul Foundation logo" },
-  { id: "campus-vision", title: "Campus Vision", category: "Campus", image_url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80", alt: "Green campus landscape" },
-  { id: "ganga", title: "Ganga Proximity", category: "Location", image_url: "https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=1400&q=80", alt: "River landscape at sunrise" },
-  { id: "learning", title: "Gurukul Learning", category: "Education", image_url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1400&q=80", alt: "Open books in a library" },
-];
+export const galleryImages: GalleryImage[] = [];
 
 export const testimonials: Testimonial[] = [
   {

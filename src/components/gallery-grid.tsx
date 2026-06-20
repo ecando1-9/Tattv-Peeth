@@ -12,6 +12,19 @@ export function GalleryGrid({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<GalleryImage | null>(null);
   const filtered = category === "All" ? images : images.filter((image) => image.category === category);
 
+  if (images.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center rounded-sm border border-dashed p-12 text-center" style={{ borderColor: "var(--c-div)", background: "var(--c-warm)" }}>
+        <p className="font-serif text-lg font-medium text-muted-foreground" style={{ color: "var(--c-muted)" }}>
+          No images in the gallery yet.
+        </p>
+        <p className="mt-2 text-xs text-muted-foreground max-w-sm" style={{ color: "var(--c-muted)", opacity: 0.8 }}>
+          Images uploaded via the admin dashboard or seeded from Supabase will appear here dynamically.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="mb-8 flex flex-wrap gap-2">

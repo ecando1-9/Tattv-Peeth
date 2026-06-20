@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tattv Peeth Gurukul Foundation | A Gurukul for this age</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:wght@400;500;600&family=Noto+Ser" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spectral:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE4; --paper-2:#EBE3D2; --disc:#F7F2E7;
+  --ink:#241A10; --ink-soft:#5A4A35;
+  --ganga:#33576B; --ganga-deep:#22414F;
+  --ochre:#B07A1E; --copper:#9C5A2C; --bark:#6B3F18;
+  --maroon:#5E1F1B; --maroon-deep:#4A1714;
+  --gold:#C9A24B; --leaf:#3B6D11; --leaf-dk:#2F5E0E; --leaf-lt:#557F1F;
+  --line:rgba(36,26,16,0.14);
+  --disp:'Fraunces',Georgia,serif; --body:'Spectral',Georgia,serif; --dev:'Noto Serif Devanagari',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem;}
+section{padding:4.8rem 0;border-bottom:1px solid var(--line);}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:500;line-height:1.13;letter-spacing:-0.01em;}
+h2{font-size:clamp(1.85rem,3.3vw,2.6rem);}
+em{font-style:italic;color:var(--copper);}
+.dev{font-family:var(--dev);}
+.center{text-align:center;}
+.eyebrow{font-family:var(--body);font-size:0.74rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ochre);font-weight:500;margin-bottom:0.9rem;}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:64ch;}
+.sec-head{max-width:760px;}
+.sec-head.mid{margin:0 auto;}
+
+/* buttons */
+.btn-p{background:var(--maroon);color:var(--paper);border:none;font-family:var(--body);font-size:1rem;padding:0.8rem 1.5rem;border-radius:8px;cursor:pointer;transition:transform .15s,background .2s;text-decoration:none;display:inline-block;}
+.btn-p:hover{background:var(--maroon-deep);transform:translateY(-1px);}
+.btn-o{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon);font-family:var(--body);font-size:1rem;padding:0.8rem 1.5rem;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block;}
+.btn-o:hover{background:rgba(94,31,27,0.06);}
+.btn-row{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:rgba(244,239,228,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 1.5rem;max-width:1260px;margin:0 auto;gap:1rem;}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:inherit;}
+.brand .nm{font-family:var(--disp);font-size:1.12rem;font-weight:600;line-height:1;}
+.brand .nm em{color:var(--copper);}
+.brand .nm small{display:block;font-family:var(--body);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:400;margin-top:2px;}
+.nav-links{display:flex;gap:1.15rem;list-style:none;font-size:0.88rem;align-items:center;}
+.nav-links a{color:var(--ink-soft);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--maroon);}
+.nav-right{display:flex;align-items:center;gap:0.9rem;}
+.nav-login{font-size:0.88rem;color:var(--ink-soft);text-decoration:none;}
+.nav-cta{background:var(--maroon);color:var(--paper);border:none;font-family:var(--body);font-size:0.88rem;padding:0.45rem 1rem;border-radius:7px;cursor:pointer;}
+.nav-cta:hover{background:var(--maroon-deep);}
+@media(max-width:1080px){.nav-links{display:none;}}
+
+/* hero */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line);}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+.hero-scrim{position:absolute;inset:0;background:radial-gradient(ellipse 66% 78% at 50% 40%, rgba(247,242,231,0.92) 0%, rgba(247,242,231,0.66) 42%, rgba(247,242,231,0.24) 70%, transparent 86%);z-index:2;}
+.hero-content{position:relative;z-index:3;text-align:center;padding:3rem 1.5rem;max-width:760px;}
+.hero .emblem{width:min(220px,52vw);height:auto;filter:drop-shadow(0 8px 22px rgba(94,31,27,0.18));margin-bottom:1.4rem;}
+.hero .eyebrow{color:var(--copper);}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:600;margin-bottom:1rem;}
+.hero h1 em{color:var(--copper);}
+.hero p{font-size:1.18rem;color:var(--ink-soft);max-width:54ch;margin:0 auto 2rem;}
+.hero .btn-row{justify-content:center;}
+.hero .sloka{font-family:var(--dev);font-size:1.15rem;color:var(--maroon);margin-top:1.8rem;}
+
+/* about */
+.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:1.8rem;}
+.about-cols p{color:var(--ink-soft);}
+@media(max-width:760px){.about-cols{grid-template-columns:1fr;}}
+
+/* mission / vision */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem;}
+.mv-card{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.mv-top{height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.mv-top img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+.mv-card:hover .mv-top img{transform:scale(1.05);}
+.mv-body{padding:1.6rem 1.8rem 2rem;}
+.mv-body h3{font-size:1.55rem;margin-bottom:0.6rem;}
+.mv-body p{color:var(--ink-soft);font-size:1.0rem;}
+@media(max-width:760px){.mv-grid{grid-template-columns:1fr;}}
+
+/* dhara / four cards */
+.dhara-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.4rem;}
+.dhara{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .18s,box-shadow .18s;}
+.dhara:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(36,26,16,0.1);}
+.dhara .ic-top{height:120px;display:flex;align-items:center;justify-content:center;background:var(--disc);border-bottom:1px solid var(--line);overflow:hidden;}
+.dhara .ic-top img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+.dhara:hover .ic-top img{transform:scale(1.05);}
+.dhara:nth-child(1) .ic-top{box-shadow:inset 0 3px 0 var(--ochre);}
+.dhara:nth-child(2) .ic-top{box-shadow:inset 0 3px 0 var(--copper);}
+.dhara:nth-child(3) .ic-top{box-shadow:inset 0 3px 0 var(--ganga);}
+.dhara:nth-child(4) .ic-top{box-shadow:inset 0 3px 0 var(--maroon);}
+.dhara .body{padding:1.2rem 1.25rem 1.5rem;}
+.dhara .dev{font-size:1.35rem;color:var(--maroon);margin-bottom:0.1rem;}
+.dhara h3{font-size:1.15rem;margin-bottom:0.1rem;}
+.dhara .role{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:0.6rem;}
+.dhara p{font-size:0.88rem;color:var(--ink-soft);line-height:1.58;}
+@media(max-width:900px){.dhara-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.dhara-grid{grid-template-columns:1fr;}}
+
+/* stats */
+.stats{background:var(--ganga-deep);color:#EAF0F2;border-radius:16px;padding:2.4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.stats .stat{text-align:center;}
+.stats .stat .n{font-family:var(--disp);font-size:2.2rem;color:#fff;}
+.stats .stat .l{font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(234,240,242,0.72);margin-top:0.2rem;}
+.stats-bar{grid-column:1/-1;height:8px;background:rgba(255,255,255,0.16);border-radius:99px;overflow:hidden;}
+.stats-bar i{display:block;height:100%;width:23%;background:var(--gold);border-radius:99px;}
+.stats-cap{grid-column:1/-1;text-align:center;font-size:0.84rem;color:rgba(234,240,242,0.8);}
+@media(max-width:680px){.stats{grid-template-columns:1fr 1fr;}}
+
+/* yajna */
+.yajna-rail{display:grid;grid-template-columns:repeat(5,1fr);gap:0.9rem;margin-top:2rem;}
+.ycell{background:var(--paper-2);border:1px solid var(--line);border-radius:11px;overflow:hidden;text-align:center;}
+.ycell .ic-top{height:84px;display:flex;align-items:center;justify-content:center;background:var(--disc);overflow:hidden;}
+.ycell .ic-top img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+.ycell:hover .ic-top img{transform:scale(1.05);}
+.ycell .body{padding:0.9rem 0.7rem 1.1rem;}
+.ycell .dev{font-size:1.4rem;color:var(--maroon);}
+.ycell .nm{font-family:var(--disp);font-size:1.02rem;margin-top:0.15rem;}
+.ycell .en{font-size:0.76rem;color:var(--ink-soft);margin-top:0.3rem;line-height:1.4;}
+.yajna-foot{margin-top:1.6rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:space-between;}
+.yajna-foot p{max-width:60ch;color:var(--ink-soft);font-size:0.98rem;}
+@media(max-width:760px){.yajna-rail{grid-template-columns:1fr 1fr 1fr;}}
+@media(max-width:440px){.yajna-rail{grid-template-columns:1fr 1fr;}}
+
+/* timeline */
+.tl{margin-top:2.4rem;display:flex;flex-direction:column;gap:1.1rem;}
+.tl-card{background:var(--paper-2);border:1px solid var(--line);border-radius:13px;display:grid;grid-template-columns:84px 1fr 220px;gap:0;align-items:stretch;overflow:hidden;}
+.tl-num{font-family:var(--disp);font-size:2.6rem;color:var(--gold);line-height:1;font-weight:600;padding:1.5rem 0 0 1.7rem;}
+.tl-body{padding:1.5rem 1.7rem 1.5rem 0;}
+.tl-meta{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.5rem;flex-wrap:wrap;}
+.tl-pill{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:99px;font-weight:600;}
+.pill-active{background:rgba(176,122,30,0.16);color:var(--ochre);}
+.pill-up{background:rgba(51,87,107,0.14);color:var(--ganga-deep);}
+.pill-plan{background:rgba(94,31,27,0.1);color:var(--maroon);}
+.tl-yr{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
+.tl-card h4{font-size:1.3rem;margin-bottom:0.15rem;}
+.tl-sub{color:var(--copper);font-style:italic;font-size:0.96rem;margin-bottom:0.5rem;}
+.tl-card p{color:var(--ink-soft);font-size:0.95rem;max-width:66ch;margin-bottom:0.8rem;}
+.chips{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.chip{font-size:0.74rem;background:var(--disc);border:1px solid var(--line);color:var(--ink-soft);padding:0.22rem 0.6rem;border-radius:99px;}
+.tl-img{width:100%;height:100%;object-fit:cover;min-height:160px;border-left:1px solid var(--line);transition:transform 0.4s ease;}
+.tl-card:hover .tl-img{transform:scale(1.03);}
+@media(max-width:768px){
+  .tl-card{grid-template-columns:1fr;}
+  .tl-num{padding:1.5rem 1.7rem 0 1.7rem;}
+  .tl-body{padding:0 1.7rem 1.5rem 1.7rem;}
+  .tl-img{border-left:none;border-top:1px solid var(--line);height:180px;}
+}
+@media(max-width:600px){.tl-num{font-size:2rem;}}
+
+/* testimonials */
+.tm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem;}
+.tm{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:12px;padding:1.7rem 1.8rem;}
+.tm .q{font-family:var(--disp);font-size:2.4rem;color:var(--gold);line-height:0.6;}
+.tm p{font-family:var(--disp);font-style:italic;font-size:1.18rem;color:var(--ink);margin:0.4rem 0 1rem;line-height:1.4;}
+.tm .who{font-size:0.86rem;color:var(--ink-soft);}
+.tm .who b{color:var(--maroon);font-style:normal;}
+@media(max-width:680px){.tm-grid{grid-template-columns:1fr;}}
+
+/* closing cta */
+.closing{background:linear-gradient(180deg,rgba(94,31,27,0.04),rgba(94,31,27,0.09));text-align:center;}
+
+/* footer */
+footer{background:var(--ink);color:#D9CDB8;padding:3.2rem 0 1.8rem;border:none;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:2.5rem;}
+footer h4{font-family:var(--disp);color:var(--paper);font-size:1.2rem;margin-bottom:0.5rem;}
+footer h4 em{color:var(--copper);}
+footer .ftitle{font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:#B7A684;margin-bottom:0.7rem;}
+footer .small{font-size:0.86rem;color:#A8987C;line-height:1.7;max-width:40ch;}
+footer a{color:#C7B796;text-decoration:none;font-size:0.9rem;}
+footer a:hover{color:var(--gold);}
+.foot-links{display:flex;flex-direction:column;gap:0.4rem;}
+.foot-contact{font-size:0.88rem;color:#A8987C;line-height:1.9;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:2.4rem;padding-top:1.3rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;align-items:center;}
+.foot-bottom .legal{font-size:0.8rem;color:#8C7B60;}
+.foot-true{color:var(--gold);}
+.foot-note{font-size:0.78rem;color:#7B6B52;margin-top:0.6rem;max-width:60ch;}
+.soc{display:flex;gap:0.6rem;margin-top:0.8rem;}
+.soc a{width:30px;height:30px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr;}}
+
+:focus-visible{outline:2px solid var(--ganga);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs (kept for emblem/logo references if needed) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="petal" d="M0,0 C -15,-24 -13,-42 0,-58 C 13,-42 15,-24 0,0 Z"/>
+    <path id="leaf" d="M0,0 C -6,-8 -15,-12 -17,-30 C -19,-48 -8,-60 0,-72 C 8,-60 19,-48 17,-30 C 15,-12 6,-8 0,0 Z"/>
+    <path id="petalMini" d="M0,0 C -7,-11 -6,-19 0,-26 C 6,-19 7,-11 0,0 Z" fill="#B07A1E" stroke="#5E1F1B" stroke-width="0.8"/>
+    <path id="leafMini" d="M0,0 C -3,-4 -7,-6 -8,-14 C -9,-22 -4,-27 0,-32 C 4,-27 9,-22 8,-14 C 7,-6 3,-4 0,0 Z" fill="#3B6D11" stroke="#234A0B" stroke-width="0.6"/>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#">
+      <svg width="44" height="44" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="3"/>
+        <path d="M34,84 q9,-5 18,0 t18,0 t18,0" fill="none" stroke="#33576B" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M34,92 q9,-5 18,0 t18,0 t18,0" fill="none" stroke="#33576B" stroke-width="2.4" stroke-linecap="round"/>
+        <g transform="translate(60,80)"><use href="#petalMini" transform="rotate(-32)"/><use href="#petalMini" transform="rotate(0)"/><use href="#petalMini" transform="rotate(32)"/></g>
+        <rect x="57.5" y="52" width="5" height="28" fill="#6B3F18"/>
+        <g transform="translate(60,54)"><use href="#leafMini" transform="rotate(-50)"/><use href="#leafMini" transform="rotate(-25)"/><use href="#leafMini" transform="rotate(0)"/><use href="#leafMini" transform="rotate(25)"/><use href="#leafMini" transform="rotate(50)"/></g>
+      </svg>
+      <span class="nm">Tattv Peeth <em>Gurukul</em><small>Garh Mukteśvara</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#mv">Vision &amp; Mission</a></li>
+      <li><a href="#dhara">Four streams</a></li>
+      <li><a href="#yajna">Campaigns</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#voices">Testimonials</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-login" href="#">Login</a>
+      <button class="nav-cta" onclick="location.href='#support'">Donate</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <!-- dawn-Ganga backdrop cover image -->
+  <img class="hero-bg" src="public/hero_banner.jpg" alt="Sacred river Ganga at sunrise near Garh Mukteshwar campus" />
+  <div class="hero-scrim"></div>
+
+  <div class="hero-content">
+    <!-- emblem -->
+    <svg class="emblem" viewBox="0 0 600 600" role="img" aria-label="Tattv Peeth Gurukul emblem: a tree of knowledge rising from a lotus seat upon the Ganga">
+      <defs>
+        <path id="bandTop" d="M64,300 A236,236 0 0 1 536,300"/>
+        <path id="bandBot" d="M64,300 A236,236 0 0 0 536,300"/>
+      </defs>
+      <circle cx="300" cy="300" r="268" fill="none" stroke="#C9A24B" stroke-width="1.5"/>
+      <circle cx="300" cy="300" r="254" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="5"/>
+      <circle cx="300" cy="300" r="208" fill="none" stroke="#5E1F1B" stroke-width="2.5"/>
+      <text font-family="'Noto Serif Devanagari',serif" font-size="29" font-weight="600" letter-spacing="1.5" fill="#5E1F1B"><textPath href="#bandTop" startOffset="50%" text-anchor="middle">तत्त्व पीठ गुरुकुल</textPath></text>
+      <text font-family="'Noto Serif Devanagari',serif" font-size="25" font-weight="600" letter-spacing="1" fill="#5E1F1B"><textPath href="#bandBot" startOffset="50%" text-anchor="middle">यथा दृष्टिः तथा सृष्टिः</textPath></text>
+      <g fill="#C9A24B" stroke="#5E1F1B" stroke-width="1"><rect x="61" y="293" width="14" height="14" transform="rotate(45 68 300)"/><rect x="525" y="293" width="14" height="14" transform="rotate(45 532 300)"/></g>
+      <g fill="none" stroke="#33576B" stroke-width="3.4" stroke-linecap="round">
+        <path d="M192,420 q18,-10 36,0 t36,0 t36,0 t36,0 t36,0"/>
+        <path d="M200,434 q18,-10 36,0 t36,0 t36,0 t36,0 t30,0"/>
+        <path d="M192,448 q18,-10 36,0 t36,0 t36,0 t36,0 t36,0"/>
+      </g>
+      <g transform="translate(300,420) scale(1.12)" stroke="#5E1F1B" stroke-width="1.2">
+        <use href="#petal" transform="rotate(-74)" fill="#9C5A2C"/><use href="#petal" transform="rotate(74)" fill="#9C5A2C"/>
+        <use href="#petal" transform="rotate(-46)" fill="#9C5A2C"/><use href="#petal" transform="rotate(46)" fill="#9C5A2C"/>
+        <use href="#petal" transform="rotate(-20)" fill="#B07A1E"/><use href="#petal" transform="rotate(20)" fill="#B07A1E"/><use href="#petal" transform="rotate(0)" fill="#B07A1E"/>
+      </g>
+      <circle cx="300" cy="414" r="6" fill="#C9A24B" stroke="#5E1F1B" stroke-width="1"/>
+      <path d="M294,412 C296,386 297,366 297,352 L303,352 C303,366 304,386 306,412 Z" fill="#6B3F18"/>
+      <g fill="none" stroke="#6B3F18" stroke-width="3" stroke-linecap="round"><path d="M296,410 C289,414 283,416 277,420"/><path d="M304,410 C311,414 317,416 323,420"/></g>
+      <g transform="translate(300,352)" stroke="#214208" stroke-width="0.8">
+        <use href="#leaf" transform="rotate(-84) scale(1.5)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(-56) scale(1.55)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(-28) scale(1.6)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(0) scale(1.64)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(28) scale(1.6)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(56) scale(1.55)" fill="#2F5E0E"/><use href="#leaf" transform="rotate(84) scale(1.5)" fill="#2F5E0E"/>
+        <use href="#leaf" transform="rotate(-70) scale(1.25)" fill="#3B6D11"/><use href="#leaf" transform="rotate(-42) scale(1.32)" fill="#3B6D11"/><use href="#leaf" transform="rotate(-14) scale(1.36)" fill="#3B6D11"/><use href="#leaf" transform="rotate(14) scale(1.36)" fill="#3B6D11"/><use href="#leaf" transform="rotate(42) scale(1.32)" fill="#3B6D11"/><use href="#leaf" transform="rotate(70) scale(1.25)" fill="#3B6D11"/>
+        <use href="#leaf" transform="rotate(-24) scale(0.9)" fill="#557F1F"/><use href="#leaf" transform="rotate(24) scale(0.9)" fill="#557F1F"/><use href="#leaf" transform="rotate(0) scale(0.95)" fill="#557F1F"/>
+      </g>
+    </svg>
+
+    <div class="eyebrow">A Gurukul for this age</div>
+    <h1>Tattv Peeth <em>Gurukul</em></h1>
+    <p>A residential Gurukul where the Bhāratīya knowledge tradition, rigorous contemporary study, yoga, natural farming, and sevā meet in one self-sustaining campus on the bank of the Gaṅgā at Garh Mukteśvara.</p>
+    <div class="btn-row">
+      <a class="btn-p" href="#support">Support the Initiative</a>
+      <a class="btn-o" href="#about">Learn More</a>
+    </div>
+    <div class="sloka">॥ यथा दृष्टिः तथा सृष्टिः ॥</div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About the Foundation</div>
+    <h2 style="max-width:18ch;">Rooted in tradition. <em>Open to the world.</em></h2>
+    <div class="about-cols">
+      <p>Tattv Peeth is a <b>vidyā-pīṭha</b> — a consecrated seat for the pursuit of <em>tattva</em>, the real. It is conceived as a self-sustaining residential Gurukul that forms rooted, capable, and self-aware human beings: strong in body, clear in intellect, steady in conduct.</p>
+      <p>Where conventional schooling separates learning from living, Tattv Peeth makes them inseparable. Vidyārthīs engage directly with land, craft, physical discipline, and the texts — alongside rigorous contemporary study. The fruit of rootedness is reach, never its opposite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION / VISION ============ -->
+<section id="mv">
+  <div class="wrap">
+    <div class="mv-grid">
+      <div class="mv-card">
+        <div class="mv-top a">
+          <svg width="150" height="115" viewBox="0 0 150 115" aria-hidden="true">
+            <g transform="translate(20,36)">
+              <rect x="0" y="0" width="86" height="46" rx="3" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="1.5"/>
+              <line x1="10" y1="12" x2="76" y2="12" stroke="#9C5A2C" stroke-width="2"/><line x1="10" y1="23" x2="76" y2="23" stroke="#9C5A2C" stroke-width="2"/><line x1="10" y1="34" x2="76" y2="34" stroke="#9C5A2C" stroke-width="2"/>
+              <line x1="43" y1="-4" x2="43" y2="50" stroke="#5E1F1B" stroke-width="1" opacity="0.5"/>
+            </g>
+            <g transform="translate(116,54)"><ellipse cx="0" cy="20" rx="14" ry="6" fill="#6B3F18"/><path d="M0,14 q5,-12 0,-22 q-5,10 0,22" fill="#F4D27A" stroke="#C9A24B" stroke-width="1"/></g>
+          </svg>
+        </div>
+        <div class="mv-body">
+          <h3>Mission</h3>
+          <p>To form vidyārthīs in all five kośas — body, vital energy, mind, intellect, and spirit — uniting the Bhāratīya knowledge tradition with rigorous contemporary study, so they live their svadharma and serve rāṣṭra, samāja, and kula.</p>
+        </div>
+      </div>
+      <div class="mv-card">
+        <div class="mv-top b">
+          <svg width="170" height="115" viewBox="0 0 170 115" aria-hidden="true">
+            <circle cx="85" cy="58" r="26" fill="#F4D27A"/>
+            <g stroke="#F4D27A" stroke-width="2" opacity="0.7"><line x1="85" y1="22" x2="85" y2="12"/><line x1="121" y1="34" x2="129" y2="27"/><line x1="49" y1="34" x2="41" y2="27"/></g>
+            <g fill="none" stroke="#EAF0F2" stroke-width="2" opacity="0.85" stroke-linecap="round"><path d="M30,82 q14,-7 28,0 t28,0 t28,0 t28,0"/><path d="M44,96 q14,-7 28,0 t28,0 t28,0"/></g>
+          </svg>
+        </div>
+        <div class="mv-body">
+          <h3>Vision</h3>
+          <p>To raise a generation rooted in svadharma — capable of living, upholding, and carrying Sanātana Dharma forward in their own age.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATUR-DHARA (four cards) ============ -->
+<section id="dhara">
+  <div class="wrap">
+    <div class="eyebrow">Catur-Dhārā · Four streams of formation</div>
+    <h2 style="max-width:26ch;">A complete education of body, mind, <em>character, and spirit</em></h2>
+    <p class="lead" style="margin-top:1rem;">Four streams of one Gurukul life — together forming the whole person, not a tested fragment of one.</p>
+    <div class="dhara-grid">
+      <div class="dhara">
+        <div class="ic-top"><svg class="ic" viewBox="0 0 64 56" aria-hidden="true">
+          <rect x="6" y="12" width="24" height="34" rx="2" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="1.6"/><rect x="34" y="12" width="24" height="34" rx="2" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="1.6"/>
+          <path d="M30,12 q2,-4 4,0 v34 q-2,-3 -4,0 Z" fill="#9C5A2C"/>
+          <line x1="11" y1="22" x2="26" y2="22" stroke="#9C5A2C" stroke-width="1.6"/><line x1="11" y1="29" x2="26" y2="29" stroke="#9C5A2C" stroke-width="1.6"/><line x1="11" y1="36" x2="22" y2="36" stroke="#9C5A2C" stroke-width="1.6"/>
+          <line x1="38" y1="22" x2="53" y2="22" stroke="#9C5A2C" stroke-width="1.6"/><line x1="38" y1="29" x2="53" y2="29" stroke="#9C5A2C" stroke-width="1.6"/><line x1="38" y1="36" x2="49" y2="36" stroke="#9C5A2C" stroke-width="1.6"/>
+        </svg></div>
+        <div class="body">
+          <div class="dev">शास्त्र</div>
+          <h3>Śāstra</h3>
+          <div class="role">Scriptural Wisdom</div>
+          <p>Veda and Upaniṣad, Saṃskṛta as a living tongue, darśana, Itihāsa-Purāṇa — alongside mathematics, science, and technology, the Bhāratīya contribution to each restored to its place.</p>
+        </div>
+      </div>
+      <div class="dhara">
+        <div class="ic-top"><svg class="ic" viewBox="0 0 64 56" aria-hidden="true">
+          <ellipse cx="32" cy="42" rx="20" ry="8" fill="#9C5A2C"/><path d="M32,34 q8,-16 0,-26 q-8,10 0,26" fill="#F4D27A" stroke="#C9A24B" stroke-width="1.4"/><path d="M32,28 q4,-7 0,-13 q-4,5 0,13" fill="#B07A1E"/>
+        </svg></div>
+        <div class="body">
+          <div class="dev">साधना</div>
+          <h3>Sādhanā</h3>
+          <div class="role">Inner Discipline</div>
+          <p>Daily sandhyā, yoga, prāṇāyāma, havan, and meditation — the keel of the day, kept by the ācāryas before it is ever asked of the vidyārthīs.</p>
+        </div>
+      </div>
+      <div class="dhara">
+        <div class="ic-top"><svg class="ic" viewBox="0 0 64 56" aria-hidden="true">
+          <path d="M14,40 C12,30 16,24 24,24 L44,24 C52,24 54,30 52,40 L48,40 L48,32 L44,32 L44,40 L40,40 L40,30 L26,30 L26,40 L22,40 L22,32 L18,32 L18,40 Z" fill="#5E1F1B"/>
+          <path d="M44,24 C50,20 56,18 58,22 C56,26 50,28 46,28 Z" fill="#5E1F1B"/><path d="M52,18 q4,-2 6,2" fill="none" stroke="#5E1F1B" stroke-width="2" stroke-linecap="round"/><circle cx="51" cy="24" r="1.6" fill="#F7F2E7"/>
+        </svg></div>
+        <div class="body">
+          <div class="dev">सेवा</div>
+          <h3>Sevā</h3>
+          <div class="role">Service</div>
+          <p>Go-sevā, work in the field, care of guests, service to the surrounding villages, and Gaṅgā-sevā at the Kārtika melā — niṣkāma karma, a lived relationship with the land.</p>
+        </div>
+      </div>
+      <div class="dhara">
+        <div class="ic-top"><svg class="ic" viewBox="0 0 64 56" aria-hidden="true">
+          <!-- kalasha -->
+          <path d="M22,48 C16,42 16,30 24,28 L40,28 C48,30 48,42 42,48 Z" fill="#9C5A2C"/>
+          <rect x="24" y="22" width="16" height="7" rx="1.5" fill="#B07A1E"/>
+          <circle cx="32" cy="15" r="6.5" fill="#F4D27A" stroke="#C9A24B" stroke-width="1"/>
+          <path d="M25,22 C18,18 16,12 20,9 C22,14 26,18 30,20 Z" fill="#3B6D11"/>
+          <path d="M39,22 C46,18 48,12 44,9 C42,14 38,18 34,20 Z" fill="#3B6D11"/>
+        </svg></div>
+        <div class="body">
+          <div class="dev">संस्कार</div>
+          <h3>Saṃskāra</h3>
+          <div class="role">Character</div>
+          <p>Conduct, respect, self-reliance, and cultural rootedness - formed not by lecture but woven into the daily rhythm of residential gurukula life.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n">₹23L</div><div class="l">Amount Raised</div></div>
+      <div class="stat"><div class="n">₹1 Cr</div><div class="l">Phase I Target</div></div>
+      <div class="stat"><div class="n">84</div><div class="l">Supporters</div></div>
+      <div class="stat"><div class="n">23%</div><div class="l">Progress</div></div>
+      <div class="stats-bar"><i></i></div>
+      <div class="stats-cap">23% of the Phase I goal funded — every rupee traceable to the work it funds.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PANCHA MAHAYAJNA ============ -->
+<section id="yajna">
+  <div class="wrap">
+    <div class="eyebrow">Pañca-Mahāyajña</div>
+    <h2 style="max-width:24ch;">The five offerings, <em>made real on the land</em></h2>
+    <p class="lead" style="margin-top:1rem;">The śāstra prescribes five great offerings through which a householder sustains the whole. At Tattv Peeth each campaign belongs to one of them — choose the offering that speaks to you.</p>
+    <div class="yajna-rail">
+      <div class="ycell"><div class="ic-top"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><rect x="14" y="12" width="28" height="20" rx="2" fill="#F7F2E7" stroke="#5E1F1B" stroke-width="1.6"/><line x1="20" y1="20" x2="36" y2="20" stroke="#9C5A2C" stroke-width="1.6"/><line x1="20" y1="26" x2="32" y2="26" stroke="#9C5A2C" stroke-width="1.6"/><path d="M28,12 v20" stroke="#5E1F1B" stroke-width="0.8" opacity="0.5"/><line x1="16" y1="40" x2="40" y2="40" stroke="#9C5A2C" stroke-width="2.4" stroke-linecap="round"/></svg></div><div class="body"><div class="dev">ब्रह्म</div><div class="nm">Brahma</div><div class="en">Study &amp; teaching · the seat of learning</div></div></div>
+      <div class="ycell"><div class="ic-top"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><path d="M16,42 L40,42 L36,30 L20,30 Z" fill="#9C5A2C"/><path d="M28,30 q-7,-12 0,-20 q7,8 0,20" fill="#F4D27A" stroke="#C9A24B" stroke-width="1.2"/><path d="M28,24 q-3,-6 0,-10 q3,4 0,10" fill="#E07B2C"/></svg></div><div class="body"><div class="dev">देव</div><div class="nm">Deva</div><div class="en">Havan &amp; worship · the agni kept</div></div></div>
+      <div class="ycell"><div class="ic-top"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="22" r="11" fill="none" stroke="#5E1F1B" stroke-width="2"/><path d="M28,33 v12 M20,45 h16" stroke="#5E1F1B" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="28" cy="22" r="3" fill="#C9A24B"/></svg></div><div class="body"><div class="dev">पितृ</div><div class="nm">Pitṛ</div><div class="en">Honouring ancestors · go-sevā</div></div></div>
+      <div class="ycell"><div class="ic-top"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><g fill="none" stroke="#33576B" stroke-width="2.6" stroke-linecap="round"><path d="M12,26 q8,-6 16,0 t16,0"/><path d="M12,34 q8,-6 16,0 t16,0"/><path d="M12,42 q8,-6 16,0 t16,0"/></g></svg></div><div class="body"><div class="dev">भूत</div><div class="nm">Bhūta</div><div class="en">Serving beings · earth, water, cattle</div></div></div>
+      <div class="ycell"><div class="ic-top"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><path d="M14,40 q14,-10 28,0" fill="none" stroke="#9C5A2C" stroke-width="2.4" stroke-linecap="round"/><circle cx="28" cy="22" r="6" fill="#F4D27A" stroke="#C9A24B" stroke-width="1"/><path d="M22,30 q6,5 12,0" fill="#B07A1E"/></svg></div><div class="body"><div class="dev">मनुष्य</div><div class="nm">Manuṣya</div><div class="en">The guest honoured · anna-dāna</div></div></div>
+    </div>
+    <div class="yajna-foot">
+      <p>The vidyārthī performs the five in deed; the well-wisher performs them in dāna. Each contribution is recorded on an open <em>puṇya-patra</em> — traced, rupee by rupee, to the exact work it funds.</p>
+      <a class="btn-p" href="#">Explore campaigns &amp; trace offerings →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="eyebrow">Development Timeline</div>
+    <h2 style="max-width:22ch;">From sacred land to <em>living institution</em></h2>
+    <p class="lead" style="margin-top:1rem;">Built in deliberate phases, each milestone creating the conditions for the next.</p>
+    <div class="tl">
+      <div class="tl-card">
+        <div class="tl-num">01</div>
+        <div class="tl-body">
+          <div class="tl-meta"><span class="tl-pill pill-active">Active</span><span class="tl-yr">2024 – 2025</span></div>
+          <h4>Land Preparation</h4>
+          <div class="tl-sub">Establishing the physical and legal foundation of the campus</div>
+          <p>Boundary demarcation, land levelling, soil preparation, water access, and the first campus pathways prepare the ground for a living Gurukul.</p>
+          <div class="chips"><span class="chip">Legal consolidation</span><span class="chip">Boundary wall</span><span class="chip">Land levelling</span><span class="chip">Water access</span><span class="chip">Entry gate</span></div>
+        </div>
+        <img class="tl-img" src="public/phase1.png" alt="Phase 1: Land Preparation" />
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">02</div>
+        <div class="tl-body">
+          <div class="tl-meta"><span class="tl-pill pill-active">Active</span><span class="tl-yr">2025 – 2026</span></div>
+          <h4>Infrastructure Development</h4>
+          <div class="tl-sub">Creating residential and academic spaces</div>
+          <p>Core construction begins with teaching spaces, residential quarters, dining facilities, and a hall for yoga and meditation.</p>
+          <div class="chips"><span class="chip">Classrooms</span><span class="chip">Dormitories</span><span class="chip">Kitchen</span><span class="chip">Meditation hall</span><span class="chip">Faculty housing</span></div>
+        </div>
+        <img class="tl-img" src="public/phase2.png" alt="Phase 2: Infrastructure Development" />
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">03</div>
+        <div class="tl-body">
+          <div class="tl-meta"><span class="tl-pill pill-up">Upcoming</span><span class="tl-yr">2026 – 2027</span></div>
+          <h4>Agriculture &amp; Self-Reliance</h4>
+          <div class="tl-sub">Building the food and ecological systems</div>
+          <p>Go-ādhārita natural farming, orchards, agroforestry, a herbal garden, composting, and rainwater harvesting make the campus self-feeding.</p>
+          <div class="chips"><span class="chip">Natural farming</span><span class="chip">Agroforestry</span><span class="chip">Herbal garden</span><span class="chip">Composting</span><span class="chip">Rainwater harvesting</span></div>
+        </div>
+        <img class="tl-img" src="public/phase3.png" alt="Phase 3: Agriculture &amp; Self-Reliance" />
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">04</div>
+        <div class="tl-body">
+          <div class="tl-meta"><span class="tl-pill pill-plan">Planned</span><span class="tl-yr">2027 – 2028</span></div>
+          <h4>Academic Launch</h4>
+          <div class="tl-sub">Welcoming the founding cohort</div>
+          <p>The first vidyārthīs enter a curriculum that meets NEP 2020 and CBSE requirements and exceeds them, rooted in the Bhāratīya knowledge tradition.</p>
+          <div class="chips"><span class="chip">Admissions</span><span class="chip">Faculty appointments</span><span class="chip">Curriculum</span><span class="chip">CBSE process</span><span class="chip">Parent engagement</span></div>
+        </div>
+        <img class="tl-img" src="public/phase4.png" alt="Phase 4: Academic Launch" />
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">05</div>
+        <div class="tl-body">
+          <div class="tl-meta"><span class="tl-pill pill-plan">Planned</span><span class="tl-yr">2028 onwards</span></div>
+          <h4>Community Expansion</h4>
+          <div class="tl-sub">Serving the wider region</div>
+          <p>Open programmes, research partnerships, rural skills training, and the annual gathering extend the Gurukul's reach.</p>
+          <div class="chips"><span class="chip">Open programmes</span><span class="chip">Research</span><span class="chip">Rural skills</span><span class="chip">Annual gathering</span><span class="chip">Alumni network</span></div>
+        </div>
+        <img class="tl-img" src="public/phase5.png" alt="Phase 5: Community Expansion" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="voices">
+  <div class="wrap">
+    <div class="eyebrow">Testimonials</div>
+    <h2 style="max-width:22ch;">Voices from the <em>founding circle</em></h2>
+    <div class="tm-grid">
+      <div class="tm">
+        <div class="q">&ldquo;</div>
+        <p>Tattv Peeth brings education back into relationship with land, discipline, service, and inner growth.</p>
+        <div class="who"><b>Founding Supporter</b> · Delhi NCR</div>
+      </div>
+      <div class="tm">
+        <div class="q">&ldquo;</div>
+        <p>The vision is rooted, practical, and deeply needed for families seeking a saṃskāra-led education.</p>
+        <div class="who"><b>Community Advisor</b> · Garh Mukteśvara</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="closing" id="support">
+  <div class="wrap">
+    <div class="eyebrow">Founding Phase</div>
+    <h2 style="max-width:20ch;margin:0 auto 1.6rem;">Help build the Gurukul <em>from the ground up</em></h2>
+    <a class="btn-p" href="#">Support the Initiative</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Tattv Peeth <em>Gurukul</em></h4>
+        <p class="small">A residential Gurukul at Garh Mukteśvara, on the bank of the Gaṅgā — uniting the Bhāratīya knowledge tradition, rigorous contemporary study, yoga, natural farming, and sevā.</p>
+        <div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a></div>
+      </div>
+      <div>
+        <div class="ftitle">Explore</div>
+        <div class="foot-links">
+          <a href="#about">About Us</a><a href="#mv">Vision &amp; Mission</a><a href="#dhara">Four streams</a><a href="#yajna">Campaigns</a><a href="#timeline">Timeline</a><a href="#voices">Testimonials</a><a href="#footer">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="ftitle">Contact</div>
+        <div class="foot-contact">
+          Garh Mukteśvara, Hapur district, Uttar Pradesh<br>
+          +91 93505 01133<br>
+          info@tattvpeeth.org<br>
+          CIN: U85420DL2026NPL466818
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">© 2026 Tattv Peeth Gurukul Foundation. All rights reserved. · <span class="foot-true">80G eligible</span></div>
+      <a href="#">Admin Portal →</a>
+    </div>
+    <p class="foot-note">Emblem and illustrations are original line-art, drawn for this Foundation. Photographs of the actual kṣetra at Garh Mukteśvara will replace and accompany them once the site is documented.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 export const SITE_NAME = "Tattv Peeth Gurukul Foundation";
 export const SHORT_NAME = "Tattv Peeth Gurukul";
-export const TAGLINE = "A Gurukul For A New Generation";
+export const TAGLINE = "A Gurukul for this age";
 export const LOGO_URL =
   "https://res.cloudinary.com/dur6fkyoz/image/upload/v1781024139/1_j62tg8.png";
 

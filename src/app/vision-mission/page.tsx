@@ -78,13 +78,13 @@ export default function VisionMissionPage() {
             {[
               {
                 label: "Mission",
-                text: "To nurture individuals through a Gurukul-based education system that integrates Indian Knowledge Systems with contemporary learning and builds strength, clarity, balance, and awareness.",
+                text: "To form vidyārthīs in all five kośas — body, vital energy, mind, intellect, and spirit — uniting the Bhāratīya knowledge tradition with rigorous contemporary study, so they live their svadharma and serve rāṣṭra, samāja, and kula.",
                 image: "/mission.jpg",
                 title: "What we do",
               },
               {
                 label: "Vision",
-                text: "To establish a globally respected centre of holistic education that revives the ancient Gurukul tradition in a modern context and develops ethical leaders.",
+                text: "To raise a generation rooted in svadharma — capable of living, upholding, and carrying Sanātana Dharma forward in their own age.",
                 image: "/vision.jpg",
                 title: "Where we are going",
               },
@@ -94,15 +94,31 @@ export default function VisionMissionPage() {
                 className="rounded-sm border overflow-hidden flex flex-col"
                 style={{ background: "var(--c-warm)", borderColor: "var(--c-div)" }}
               >
-                {/* Cover Image */}
-                <div className="relative h-48 w-full overflow-hidden border-b" style={{ borderColor: "var(--c-div)" }}>
-                  <Image
-                    src={mv.image}
-                    alt={mv.label}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 440px"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
+                {/* Cover Image -> SVG Logo */}
+                <div
+                  className={`flex h-48 w-full items-center justify-center border-b p-4 ${
+                    mv.label === "Mission" ? "bg-gradient-to-br from-[#9C5A2C] to-[#B07A1E]" : "bg-gradient-to-br from-[#22414F] to-[#33576B]"
+                  }`}
+                  style={{ borderColor: "var(--c-div)" }}
+                >
+                  {mv.label === "Mission" ? (
+                    <svg width="150" height="115" viewBox="0 0 150 115" aria-hidden="true" className="w-full h-full max-h-[140px] object-contain">
+                      <g transform="translate(20,36)">
+                        <rect x="0" y="0" width="86" height="46" rx="3" fill="#F7F2E7" stroke="#5E1F1B" strokeWidth="1.5"/>
+                        <line x1="10" y1="12" x2="76" y2="12" stroke="#9C5A2C" strokeWidth="2"/>
+                        <line x1="10" y1="23" x2="76" y2="23" stroke="#9C5A2C" strokeWidth="2"/>
+                        <line x1="10" y1="34" x2="60" y2="34" stroke="#9C5A2C" strokeWidth="2"/>
+                        <line x1="43" y1="-4" x2="43" y2="50" stroke="#5E1F1B" strokeWidth="1" opacity="0.5"/>
+                      </g>
+                      <g transform="translate(116,54)"><ellipse cx="0" cy="20" rx="14" ry="6" fill="#6B3F18"/><path d="M0,14 q5,-12 0,-22 q-5,10 0,22" fill="#F4D27A" stroke="#C9A24B" strokeWidth="1"/></g>
+                    </svg>
+                  ) : (
+                    <svg width="170" height="115" viewBox="0 0 170 115" aria-hidden="true" className="w-full h-full max-h-[140px] object-contain">
+                      <circle cx="85" cy="58" r="26" fill="#F4D27A"/>
+                      <g stroke="#F4D27A" strokeWidth="2" opacity="0.7"><line x1="85" y1="22" x2="85" y2="12"/><line x1="121" y1="34" x2="129" y2="27"/><line x1="49" y1="34" x2="41" y2="27"/></g>
+                      <g fill="none" stroke="#EAF0F2" strokeWidth="2" opacity="0.85" strokeLinecap="round"><path d="M30,82 q14,-7 28,0 t28,0 t28,0 t28,0"/><path d="M44,96 q14,-7 28,0 t28,0 t28,0"/></g>
+                    </svg>
+                  )}
                 </div>
 
                 <div className="p-7 flex-1 flex flex-col justify-start">

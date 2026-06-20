@@ -19,9 +19,9 @@ export function SiteFooter() {
             className="mt-4 max-w-xs text-[13px] font-light leading-[1.8]"
             style={{ color: "var(--c-muted)" }}
           >
-            A residential Gurukul in Garh Mukteshwar integrating Indian
-            Knowledge Systems, contemporary academics, yoga, organic farming,
-            and community service.
+            A residential Gurukul where the Bhāratīya knowledge tradition,
+            rigorous contemporary study, yoga, natural farming, and sevā meet
+            in one self-sustaining campus on the bank of the Gaṅgā at Garh Mukteśvara.
           </p>
           <div className="mt-5 flex gap-3">
             <Link
